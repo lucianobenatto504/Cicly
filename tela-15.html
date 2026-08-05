@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — configurações</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:268/480;background-image:url('assets/tela-15.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly — configurações">
+
+<button class="hotspot" id="closeSettings" style="left:26%;top:0;width:10%;height:8%" aria-label="Fechar"></button>
+<button class="hotspot" id="profileButton" style="left:31%;top:21%;width:64%;height:11%" aria-label="Alterar perfil"></button>
+<button class="hotspot" id="flowButton" style="left:31%;top:35%;width:64%;height:11%" aria-label="Alterar fluxo"></button>
+<button class="hotspot" id="lastMonthButton" style="left:31%;top:50%;width:64%;height:11%" aria-label="Registro último mês"></button>
+<button class="hotspot" id="questionsButton" style="left:31%;top:65%;width:64%;height:11%" aria-label="Dúvidas"></button>
+<button class="hotspot" id="helpButton" style="left:31%;top:79%;width:64%;height:11%" aria-label="Precisa de ajuda"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+closeSettings.onclick=()=>go(14);
+profileButton.onclick=()=>go(3);
+flowButton.onclick=()=>go(10);
+lastMonthButton.onclick=()=>alert('O registro do último mês será conectado na próxima etapa.');
+questionsButton.onclick=()=>go(16);
+helpButton.onclick=()=>alert('A tela de ajuda será conectada quando você enviar o próximo print.');
+</script>
+</body>
+</html>

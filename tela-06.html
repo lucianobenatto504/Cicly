@@ -1,67 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cicly — Primeira menstruação</title>
-  <style>
-*{box-sizing:border-box}
-html,body{margin:0;min-height:100%;width:100%}
-body{background:#ffd7e6;font-family:Arial,Helvetica,sans-serif}
-button{font:inherit}
-.screen{width:min(100vw,430px);min-height:100vh;margin:auto;background:#ffd7e6;padding:10px 25px 20px;overflow:hidden}
-h1,h2{font-family:Georgia,"Times New Roman",serif;color:#ed1662;text-align:center}
-h1{font-size:clamp(25px,8.4vw,36px);line-height:1.12;margin:0 0 26px}
-h2{font-size:clamp(18px,6vw,25px);margin:48px 0 18px}
-.question-card{background:rgba(255,255,255,.42);border-radius:0 0 12px 12px;padding:0 0 12px}
-.choice{display:block;width:100%;min-height:49px;margin:0 0 14px;border:1.4px solid #111;border-radius:12px;background:#fff;color:#f13b7a;box-shadow:7px 5px 0 #ed1662}
-.question-card p{margin:0;text-align:center;color:#ed1662;font-size:13px;line-height:1.35}
-.help-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.help-options button{border:0;background:transparent;color:#ef5a91;padding:0;font-size:12px}
-.icon-box{width:52px;height:52px;margin:0 auto 6px;display:grid;place-items:center;background:rgba(255,255,255,.62);border-radius:12px}
-.pad{position:relative;width:24px;height:35px;border:2px solid #ff1b70;border-radius:5px}
-.pad i{position:absolute;left:6px;top:5px;width:9px;height:24px;border:2px solid #ff1b70;border-radius:3px}
-.pad b{position:absolute;left:-5px;top:11px;width:30px;height:12px;border:2px solid #ff1b70;border-radius:3px}
-.pill{width:31px;height:15px;border:1px solid #ff1b70;border-radius:999px;background:linear-gradient(90deg,#fff 0 48%,#ff1b70 48%);transform:rotate(42deg)}
-.care{position:relative;width:35px;height:35px}.care i{position:absolute;right:3px;top:6px;width:13px;height:22px;border:2px solid #ff1b70;border-radius:3px}.care b{position:absolute;left:2px;bottom:4px;width:28px;height:11px;border:2px solid #ff1b70;border-radius:50%}.care em{position:absolute;left:1px;top:0;width:7px;height:7px;border:1px solid #ff1b70;border-radius:50%}
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — primeira menstruação</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:267/481;background-image:url('assets/tela-06.png')}
 </style>
 </head>
 <body>
-  <main class="screen">
-    <h1>É sua primeira<br>menstruação?</h1>
+<main class="prototype" aria-label="Cicly — primeira menstruação">
 
-    <section class="question-card">
-      <button id="noButton" class="choice">Não, já menstruei antes</button>
-      <button id="yesButton" class="choice">Sim, É a minha primeira vez</button>
-      <p>Não se preocupe, o Cicly vai te<br>ajudar com dicas e autocuidados!!</p>
-    </section>
+<button class="hotspot" id="nao" style="left:11.8%;top:25.7%;width:78%;height:10.2%" aria-label="Não, já menstruei antes"></button>
+<button class="hotspot" id="sim" style="left:11.8%;top:38.1%;width:78%;height:10.2%" aria-label="Sim, é minha primeira vez"></button>
+<button class="hotspot" style="left:6%;top:81%;width:27%;height:16%" onclick="go(7)" aria-label="Absorventes"></button>
+<button class="hotspot" style="left:36%;top:81%;width:27%;height:16%" onclick="go(8)" aria-label="Cuidados"></button>
+<button class="hotspot" style="left:69%;top:81%;width:26%;height:16%" onclick="go(8)" aria-label="Remédios"></button>
 
-    <h2>Vamos te ajudar!</h2>
-
-    <section class="help-options">
-      <button data-target="tela-07.html">
-        <span class="icon-box"><span class="pad"><i></i><b></b></span></span>
-        <span>Absorventes</span>
-      </button>
-      <button data-target="tela-08.html">
-        <span class="icon-box"><span class="care"><i></i><b></b><em></em></span></span>
-        <span>Cuidados</span>
-      </button>
-      <button data-target="tela-08.html">
-        <span class="icon-box"><span class="pill"></span></span>
-        <span>Remédios</span>
-      </button>
-    </section>
-  </main>
-  <script>
-const choose = (value) => localStorage.setItem("ciclyPrimeiraMenstruacao", value);
-document.getElementById("noButton").addEventListener("click",()=>choose("nao"));
-document.getElementById("yesButton").addEventListener("click",()=>choose("sim"));
-document.querySelectorAll("[data-target]").forEach(btn=>{
-  btn.addEventListener("click",()=>location.href=btn.dataset.target);
-});
-
+</main>
+<script src="js/app.js"></script>
+<script>
+nao.onclick=()=>save('primeiraMenstruacao','nao');
+sim.onclick=()=>save('primeiraMenstruacao','sim');
 </script>
 </body>
 </html>

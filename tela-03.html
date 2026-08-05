@@ -1,160 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cicly — Cadastro</title>
-  <style>
-*{box-sizing:border-box}
-html,body{width:100%;min-height:100%;margin:0}
-body{background:#ffd7e6;font-family:Arial,Helvetica,sans-serif}
-button,input{font:inherit}
-.register-screen{
-  width:min(100vw,430px);
-  min-height:100vh;
-  margin:0 auto;
-  background:#ffd7e6;
-  overflow:hidden;
-  position:relative;
-}
-.register-form{
-  width:100%;
-  min-height:100vh;
-  padding:8px 7px 12px;
-  display:flex;
-  flex-direction:column;
-}
-.register-form label{
-  display:block;
-  margin:0 0 24px;
-}
-.register-form label span{
-  display:block;
-  color:#f31a67;
-  font-size:clamp(16px,6.7vw,28px);
-  line-height:1.05;
-  margin:0 0 2px 3px;
-  font-weight:400;
-}
-.register-form input{
-  display:block;
-  width:78.5%;
-  height:13px;
-  padding:0 7px;
-  border:0;
-  border-radius:999px;
-  outline:none;
-  background:#f31a67;
-  color:#fff;
-  caret-color:#fff;
-}
-.register-form input:focus{
-  box-shadow:0 0 0 3px rgba(243,26,103,.18);
-}
-.avatar-button{
-  width:80px;
-  height:80px;
-  margin: -3px 0 0 3px;
-  border:0;
-  border-radius:50%;
-  background:#2d559d;
-  position:relative;
-  padding:0;
-}
-.avatar-head{
-  position:absolute;
-  width:25px;
-  height:25px;
-  left:27px;
-  top:10px;
-  border-radius:50%;
-  background:#9eb4df;
-}
-.avatar-body{
-  position:absolute;
-  width:51px;
-  height:34px;
-  left:14px;
-  bottom:8px;
-  border-radius:50% 50% 42% 42% / 62% 62% 38% 38%;
-  background:#9eb4df;
-}
-.confirm-button{
-  width:200px;
-  min-height:37px;
-  margin:auto auto 0;
-  border:3px double #fff;
-  outline:2px solid #f31a67;
-  background:#f31a67;
-  color:#fff;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:18px;
-  font-weight:700;
-  padding:5px 10px 7px;
-  line-height:1;
-}
-.confirm-button:active{transform:translateY(1px)}
-@media (max-height:620px){
-  .register-form label{margin-bottom:16px}
-  .avatar-button{width:72px;height:72px}
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — cadastro</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:268/475;background-image:url('assets/tela-03.png')}
 
+.prototype .field{
+  color:#d81358;
+  font-size:clamp(11px,4vw,16px);
+  font-weight:500;
+  line-height:1;
+  padding:0 2px;
+  background:transparent;
+  caret-color:#d81358;
+}
+.prototype .field:focus{
+  background:transparent;
+  border-radius:0;
+  box-shadow:none;
+}
 </style>
 </head>
 <body>
-  <main class="register-screen">
-    <form class="register-form" id="registerForm" autocomplete="off">
-      <label>
-        <span>nome de usuário</span>
-        <input name="usuario" type="text" required>
-      </label>
+<main class="prototype" aria-label="Cicly — cadastro">
 
-      <label>
-        <span>data de nascimento</span>
-        <input name="nascimento" type="text" inputmode="numeric" required>
-      </label>
+<form id="cadastro">
+<input class="field" name="usuario" aria-label="Nome de usuário" style="left:3.8%;top:5.1%;width:75%;height:3.8%">
+<input class="field" name="nascimento" aria-label="Data de nascimento" style="left:3.8%;top:18.8%;width:74%;height:3.8%">
+<input class="field" name="email" type="email" aria-label="E-mail" style="left:3.8%;top:32.8%;width:76%;height:3.8%">
+<input class="field" name="senha" type="password" aria-label="Senha" style="left:3.8%;top:46.8%;width:76%;height:3.8%">
+<input class="field" name="confirmar" type="password" aria-label="Confirmar senha" style="left:3.8%;top:60.8%;width:76%;height:3.8%">
+<button class="hotspot" type="submit" style="left:12.3%;top:90.1%;width:75%;height:8%" aria-label="Confirmar cadastro"></button>
+</form>
 
-      <label>
-        <span>e-mail</span>
-        <input name="email" type="email" required>
-      </label>
-
-      <label>
-        <span>senha</span>
-        <input name="senha" type="password" required>
-      </label>
-
-      <label>
-        <span>confirmar senha</span>
-        <input name="confirmarSenha" type="password" required>
-      </label>
-
-      <button class="avatar-button" type="button" aria-label="Adicionar foto de perfil">
-        <span class="avatar-head"></span>
-        <span class="avatar-body"></span>
-      </button>
-
-      <button class="confirm-button" type="submit">confirmar cadastro</button>
-    </form>
-  </main>
-
-  <script>
-const form = document.getElementById("registerForm");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  const values = Object.fromEntries(new FormData(form));
-
-  if (values.senha !== values.confirmarSenha) {
-    alert("As senhas não são iguais.");
-    return;
-  }
-
-  localStorage.setItem("ciclyCadastro", JSON.stringify(values));
-  window.location.href = "tela-04.html";
+</main>
+<script src="js/app.js"></script>
+<script>
+document.getElementById('cadastro').addEventListener('submit',e=>{
+ e.preventDefault();
+ const d=Object.fromEntries(new FormData(e.target));
+ if(d.senha!==d.confirmar){alert('As senhas não são iguais.');return;}
+ save('ciclyCadastro',d);go(4);
 });
-
 </script>
 </body>
 </html>

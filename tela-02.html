@@ -1,33 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cicly — Tela 2</title>
-  <style>
-*{box-sizing:border-box}
-html,body{width:100%;min-height:100%;margin:0}
-body{background:#ffd7e6}
-.screen-two{width:min(100vw,430px);min-height:100vh;margin:0 auto;position:relative;overflow:hidden;background:#ffd7e6}
-.full-logo{position:absolute;top:31.6%;left:50%;width:78%;height:40%;transform:translateX(-50%);padding:0;border:0;background:transparent;cursor:pointer}
-.large-c{position:absolute;left:0;top:0;color:#ed1662;font-family:Georgia,"Times New Roman",serif;font-size:clamp(154px,62vw,270px);font-weight:400;line-height:.78;letter-spacing:-.08em}
-.small-name{position:absolute;left:57%;top:43%;color:#ed1662;font-family:Georgia,"Times New Roman",serif;font-size:clamp(42px,16vw,70px);font-weight:700;line-height:1}
-.full-logo:active{transform:translateX(-50%) scale(.99)}
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — apresentação</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:265/466;background-image:url('assets/tela-02.png')}
 </style>
 </head>
 <body>
-  <main class="screen-two">
-    <button class="full-logo" id="nextScreen" aria-label="Avançar">
-      <span class="large-c">C</span>
-      <span class="small-name">icly</span>
-    </button>
-  </main>
-  <script>
-document.getElementById("nextScreen").addEventListener("click", () => {
-  window.location.href = "tela-03.html";
-});
-
-</script>
+<main class="prototype" aria-label="Cicly — apresentação">
+<button class="hotspot" style="inset:0" onclick="go(3)" aria-label="Continuar"></button>
+</main>
+<script src="js/app.js"></script>
+<script></script>
 </body>
 </html>

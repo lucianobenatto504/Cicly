@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — escolha do modo</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:267/480;background-image:url('assets/tela-18.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly — escolha do modo">
+
+<button class="hotspot" id="gestacao" style="left:17%;top:22%;width:67%;height:9%" aria-label="Acompanhar gestação"></button>
+<button class="hotspot" id="menstruacao" style="left:17%;top:52%;width:67%;height:9%" aria-label="Acompanhar menstruação"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+gestacao.onclick=()=>{save('ciclyModo','gestacao');go(19)};
+menstruacao.onclick=()=>{save('ciclyModo','menstruacao');go(13)};
+</script>
+</body>
+</html>

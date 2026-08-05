@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — primeira gestação</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:295/528;background-image:url('assets/tela-20.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly — primeira gestação">
+
+<button class="hotspot" id="nao" style="left:24%;top:25%;width:54%;height:9%" aria-label="Não"></button>
+<button class="hotspot" id="sim" style="left:22%;top:42%;width:58%;height:10%" aria-label="Sim"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+nao.onclick=()=>{save('primeiraGestacao','nao');go(21)};
+sim.onclick=()=>{save('primeiraGestacao','sim');go(21)};
+</script>
+</body>
+</html>

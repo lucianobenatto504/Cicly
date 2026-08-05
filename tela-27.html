@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly a dois — código</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:269/478;background-image:url('assets/tela-27.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly a dois — código">
+
+<input class="field" id="codigo" value="LK3M44" style="left:43%;top:47.2%;width:30%;height:5%;color:#1f0b90">
+<button class="hotspot" id="copiar" style="left:12%;top:43%;width:75%;height:12%" aria-label="Copiar código"></button>
+<button class="hotspot" style="left:0;top:56%;width:100%;height:44%" onclick="go(28)" aria-label="Continuar"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+copiar.onclick=async()=>{
+ try{await navigator.clipboard.writeText(codigo.value);alert('Código copiado!')}
+ catch{alert('Código: '+codigo.value)}
+};
+</script>
+</body>
+</html>

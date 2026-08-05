@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — calendário</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:268/479;background-image:url('assets/tela-14.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly — calendário">
+
+<button class="hotspot" id="closeCalendar" style="left:0;top:0;width:14%;height:10%" aria-label="Fechar"></button>
+<button class="hotspot" id="settingsButton" style="left:86%;top:0;width:14%;height:10%" aria-label="Configurações"></button>
+<button class="hotspot calendar-day" data-day="1" style="left:15%;top:23%;width:11%;height:8%" aria-label="Dia 1"></button><button class="hotspot calendar-day" data-day="2" style="left:31%;top:23%;width:11%;height:8%" aria-label="Dia 2"></button><button class="hotspot calendar-day" data-day="3" style="left:47%;top:23%;width:11%;height:8%" aria-label="Dia 3"></button><button class="hotspot calendar-day" data-day="4" style="left:63%;top:23%;width:11%;height:8%" aria-label="Dia 4"></button><button class="hotspot calendar-day" data-day="4" style="left:79%;top:23%;width:11%;height:8%" aria-label="Dia 4"></button><button class="hotspot calendar-day" data-day="5" style="left:2%;top:32%;width:11%;height:8%" aria-label="Dia 5"></button><button class="hotspot calendar-day" data-day="6" style="left:18%;top:32%;width:11%;height:8%" aria-label="Dia 6"></button><button class="hotspot calendar-day" data-day="7" style="left:34%;top:32%;width:11%;height:8%" aria-label="Dia 7"></button><button class="hotspot calendar-day" data-day="8" style="left:50%;top:32%;width:11%;height:8%" aria-label="Dia 8"></button><button class="hotspot calendar-day" data-day="9" style="left:66%;top:32%;width:11%;height:8%" aria-label="Dia 9"></button><button class="hotspot calendar-day" data-day="10" style="left:82%;top:32%;width:11%;height:8%" aria-label="Dia 10"></button><button class="hotspot calendar-day" data-day="11" style="left:2%;top:41%;width:11%;height:8%" aria-label="Dia 11"></button><button class="hotspot calendar-day" data-day="12" style="left:18%;top:41%;width:11%;height:8%" aria-label="Dia 12"></button><button class="hotspot calendar-day" data-day="13" style="left:34%;top:41%;width:11%;height:8%" aria-label="Dia 13"></button><button class="hotspot calendar-day" data-day="14" style="left:50%;top:41%;width:11%;height:8%" aria-label="Dia 14"></button><button class="hotspot calendar-day" data-day="15" style="left:66%;top:41%;width:11%;height:8%" aria-label="Dia 15"></button><button class="hotspot calendar-day" data-day="16" style="left:82%;top:41%;width:11%;height:8%" aria-label="Dia 16"></button><button class="hotspot calendar-day" data-day="17" style="left:2%;top:50%;width:11%;height:8%" aria-label="Dia 17"></button><button class="hotspot calendar-day" data-day="18" style="left:18%;top:50%;width:11%;height:8%" aria-label="Dia 18"></button><button class="hotspot calendar-day" data-day="19" style="left:34%;top:50%;width:11%;height:8%" aria-label="Dia 19"></button><button class="hotspot calendar-day" data-day="20" style="left:50%;top:50%;width:11%;height:8%" aria-label="Dia 20"></button><button class="hotspot calendar-day" data-day="21" style="left:66%;top:50%;width:11%;height:8%" aria-label="Dia 21"></button><button class="hotspot calendar-day" data-day="22" style="left:82%;top:50%;width:11%;height:8%" aria-label="Dia 22"></button><button class="hotspot calendar-day" data-day="23" style="left:2%;top:59%;width:11%;height:8%" aria-label="Dia 23"></button><button class="hotspot calendar-day" data-day="24" style="left:18%;top:59%;width:11%;height:8%" aria-label="Dia 24"></button><button class="hotspot calendar-day" data-day="25" style="left:34%;top:59%;width:11%;height:8%" aria-label="Dia 25"></button><button class="hotspot calendar-day" data-day="26" style="left:50%;top:59%;width:11%;height:8%" aria-label="Dia 26"></button><button class="hotspot calendar-day" data-day="27" style="left:66%;top:59%;width:11%;height:8%" aria-label="Dia 27"></button><button class="hotspot calendar-day" data-day="28" style="left:82%;top:59%;width:11%;height:8%" aria-label="Dia 28"></button><button class="hotspot calendar-day" data-day="29" style="left:2%;top:68%;width:11%;height:8%" aria-label="Dia 29"></button><button class="hotspot calendar-day" data-day="30" style="left:18%;top:68%;width:11%;height:8%" aria-label="Dia 30"></button><button class="hotspot calendar-day" data-day="31" style="left:34%;top:68%;width:11%;height:8%" aria-label="Dia 31"></button>
+<button class="hotspot" id="saveCalendar" style="left:17%;top:83%;width:66%;height:9%" aria-label="Editar menstruação"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+const selectedDays=new Set(JSON.parse(localStorage.getItem('diasMenstruacao')||'[]'));
+
+document.querySelectorAll('.calendar-day').forEach(btn=>{
+  if(selectedDays.has(Number(btn.dataset.day))){
+    btn.style.boxShadow='0 0 0 3px white inset';
+    btn.style.borderRadius='50%';
+  }
+
+  btn.onclick=()=>{
+    const day=Number(btn.dataset.day);
+    if(selectedDays.has(day)){
+      selectedDays.delete(day);
+      btn.style.boxShadow='none';
+    }else{
+      selectedDays.add(day);
+      btn.style.boxShadow='0 0 0 3px white inset';
+      btn.style.borderRadius='50%';
+    }
+  };
+});
+
+saveCalendar.onclick=()=>{
+  localStorage.setItem('diasMenstruacao',JSON.stringify([...selectedDays].sort((a,b)=>a-b)));
+  alert('Dias salvos.');
+  go(13);
+};
+
+closeCalendar.onclick=()=>go(13);
+settingsButton.onclick=()=>go(15);
+</script>
+</body>
+</html>

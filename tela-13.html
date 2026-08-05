@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly — início</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:268/479;background-image:url('assets/tela-13.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly — início">
+
+<button class="hotspot" id="calendarButton" style="left:84%;top:2%;width:14%;height:12%" aria-label="Abrir calendário"></button>
+<button class="hotspot" id="registerButton" style="left:20%;top:47%;width:60%;height:7%" aria-label="Registrar menstruação"></button>
+<button class="hotspot" id="shareCard" style="left:4%;top:67%;width:93%;height:18%" aria-label="Compartilhar com Cicly"></button>
+<button class="hotspot" id="closeShare" style="left:89%;top:68%;width:8%;height:8%" aria-label="Fechar aviso"></button>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+calendarButton.onclick=()=>go(14);
+
+registerButton.onclick=()=>{
+  const hoje=new Date().toISOString().slice(0,10);
+  save('ultimaMenstruacao',hoje);
+  alert('Menstruação registrada.');
+};
+
+shareCard.onclick=()=>{
+  alert('O Cicly a Dois será conectado nas próximas telas.');
+};
+
+closeShare.onclick=(e)=>{
+  e.stopPropagation();
+  document.getElementById('shareCard').style.display='none';
+  document.getElementById('closeShare').style.display='none';
+};
+</script>
+</body>
+</html>

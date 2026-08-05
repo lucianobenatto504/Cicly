@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cicly a dois — cadastro</title>
+<link rel="stylesheet" href="css/app.css">
+<style>
+.prototype{aspect-ratio:249/448;background-image:url('assets/tela-29.png')}
+</style>
+</head>
+<body>
+<main class="prototype" aria-label="Cicly a dois — cadastro">
+
+<form id="parceiroForm">
+<input class="field" name="usuario" style="left:2%;top:6%;width:61%;height:4%;color:#1b126f">
+<input class="field" name="nascimento" style="left:2%;top:18%;width:61%;height:4%;color:#1b126f">
+<input class="field" name="email" type="email" style="left:2%;top:31%;width:63%;height:4%;color:#1b126f">
+<input class="field" name="senha" type="password" style="left:2%;top:44%;width:63%;height:4%;color:#1b126f">
+<input class="field" name="confirmar" type="password" style="left:2%;top:56%;width:63%;height:4%;color:#1b126f">
+<button type="submit" class="hotspot" style="left:11%;top:85%;width:72%;height:9%" aria-label="Confirmar cadastro"></button>
+</form>
+
+</main>
+<script src="js/app.js"></script>
+<script>
+parceiroForm.onsubmit=e=>{
+ e.preventDefault();
+ const d=Object.fromEntries(new FormData(e.target));
+ if(d.senha!==d.confirmar){alert('As senhas não são iguais.');return}
+ save('cadastroParceiro',d);go(30);
+};
+</script>
+</body>
+</html>
