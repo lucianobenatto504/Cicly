@@ -1,0 +1,22 @@
+CICLY — ARQUIVOS PRONTOS PARA O GITHUB E VERCEL
+
+Esta versão não depende das pastas CSS e JS.
+Todo o CSS e JavaScript já está dentro de cada arquivo HTML.
+
+COMO ATUALIZAR O GITHUB:
+1. Abra o repositório Cicly2.
+2. Clique em Add file > Upload files.
+3. Extraia este ZIP.
+4. Abra a pasta extraída.
+5. Selecione TODOS os arquivos que estão dentro dela.
+6. Arraste para o GitHub.
+7. Marque a opção para substituir arquivos existentes, quando aparecer.
+8. Clique em Commit changes.
+
+Arquivos que devem aparecer no repositório:
+- index.html
+- tela-02.html até tela-11.html
+- vercel.json
+- LEIA-ME.txt
+
+Depois do Commit, o Vercel atualiza automaticamente.

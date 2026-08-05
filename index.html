@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cicly</title>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #e4e3dd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+/*
+  O protótipo original tem proporção aproximada de 262 × 464.
+  Os valores abaixo usam a mesma proporção e se adaptam à tela.
+*/
+.splash-screen {
+  width: min(100vw, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #e4e3dd;
+}
+
+.logo-button {
+  position: absolute;
+  top: 36.42%;
+  left: 50%;
+  width: 47.33%;
+  aspect-ratio: 124 / 116;
+  transform: translateX(-50%);
+  padding: 0;
+  border: 1px solid rgba(92, 86, 87, 0.28);
+  border-radius: 12px;
+  background: #ffd7e6;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.logo-button:focus-visible {
+  outline: 3px solid rgba(237, 22, 98, 0.35);
+  outline-offset: 3px;
+}
+
+.logo-button:active {
+  transform: translateX(-50%) scale(0.985);
+}
+
+.logo-letter {
+  color: #ed1662;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(76px, 34vw, 146px);
+  font-weight: 400;
+  line-height: 0.82;
+  transform: translateY(-1%);
+  user-select: none;
+}
+
+.brand-name {
+  position: absolute;
+  top: 65.3%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(12px, 4.8vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  line-height: 1;
+}
+
+</style>
+</head>
+<body>
+  <main class="splash-screen">
+    <button class="logo-button" id="openApp" aria-label="Abrir Cicly">
+      <span class="logo-letter">C</span>
+    </button>
+
+    <p class="brand-name">CICLY</p>
+  </main>
+
+  <script>
+document.getElementById("openApp").addEventListener("click", () => {
+  window.location.href = "tela-02.html";
+});
+
+</script>
+</body>
+</html>

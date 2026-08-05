@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cicly — Duração do ciclo</title><style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;width:100%}
+body{background:#ffd7e6;font-family:Arial,Helvetica,sans-serif}
+button{font:inherit}
+.screen{width:min(100vw,430px);min-height:100vh;margin:auto;background:#ffd7e6;padding-top:2px}
+h1,h2{text-align:center;color:#ed1662;font-family:Georgia,"Times New Roman",serif}
+h1{font-size:23px;margin:0 0 7px}h2{font-size:20px;margin:26px 0 17px}
+.counter-card{width:64%;height:69px;margin:auto;border-radius:28px;background:rgba(255,255,255,.72);display:flex;align-items:center;justify-content:space-around}
+.counter-card button{width:38px;height:38px;border-radius:50%;border:1px solid #111;background:#f17ca5;color:#111;font-size:30px;line-height:28px;box-shadow:0 0 0 2px #ed1662}
+.counter-card span{font-size:23px;color:#111}
+.answer-card{width:62%;margin:auto;background:rgba(255,255,255,.42);border-radius:0 0 8px 8px;padding-bottom:16px}
+.answer-card button{display:block;width:100%;height:38px;margin-bottom:18px;border:1px solid #111;border-radius:8px;background:#fff;box-shadow:5px 4px 0 #ed1662}
+#no{color:#ed1662}.answer-card p{margin:-5px 4px 0;color:#ed1662;font-size:12px;line-height:1.35}
+
+</style></head>
+<body><main class="screen">
+<h1>Duração do ciclo</h1>
+<section class="counter-card">
+<button id="minus">−</button><span id="cycleValue">1</span><button id="plus">＋</button>
+</section>
+<h2>Tem certeza?</h2>
+<section class="answer-card">
+<button id="yes">Sim, tenho</button>
+<button id="no">Não tenho</button>
+<p>Vamos te ajudar com isso!!<br>Aguarde sua próxima<br>menstruação para alterar<br>no aplicativo.</p>
+</section>
+</main><script>
+let value=1;
+const out=document.getElementById("cycleValue");
+document.getElementById("plus").onclick=()=>{value++;out.textContent=value};
+document.getElementById("minus").onclick=()=>{if(value>1)value--;out.textContent=value};
+document.getElementById("yes").onclick=()=>{localStorage.setItem("ciclyDuracao",value);location.href="tela-11.html"};
+document.getElementById("no").onclick=()=>{localStorage.setItem("ciclyDuracao","nao-sei")};
+
+</script></body></html>

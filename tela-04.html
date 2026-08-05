@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cicly — Como podemos ajudar?</title>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #ffd7e6;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.help-screen {
+  width: min(100vw, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background: #ffd7e6;
+  padding-top: 22px;
+}
+
+.top-line {
+  width: 71%;
+  height: 2px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+h1 {
+  margin: 20px 0 31px;
+  text-align: center;
+  color: #ed1662;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(21px, 7.5vw, 31px);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.choice-card {
+  width: 68.5%;
+  min-height: 171px;
+  margin: 0 auto;
+  padding: 0 0 19px;
+  border-radius: 0 0 14px 14px;
+  background: rgba(255, 255, 255, 0.42);
+  position: relative;
+}
+
+.choice-button {
+  display: block;
+  width: 100%;
+  min-height: 34px;
+  padding: 8px 10px;
+  border: 1.3px solid #111;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  background: #ffffff;
+  color: #121212;
+  box-shadow: 5px 4px 0 #ed1662;
+  font-size: clamp(12px, 4.2vw, 16px);
+  line-height: 1;
+}
+
+.choice-button + .choice-button {
+  margin-top: 21px;
+}
+
+.choice-button.menstruation {
+  color: #ed1662;
+}
+
+.choice-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 2px 0 #ed1662;
+}
+
+.helper-text {
+  margin: 10px 8px 0;
+  color: #ed1662;
+  font-size: clamp(11px, 3.75vw, 15px);
+  line-height: 1.2;
+}
+
+</style>
+</head>
+<body>
+  <main class="help-screen">
+    <div class="top-line" aria-hidden="true"></div>
+
+    <h1>Como podemos ajudar?</h1>
+
+    <section class="choice-card">
+      <button class="choice-button gestation" id="gestationButton">
+        Acompanhar gestação
+      </button>
+
+      <button class="choice-button menstruation" id="menstruationButton">
+        Acompanhar menstruação
+      </button>
+
+      <p class="helper-text">
+        O Cicly vai te ajudar em tudo!<br>
+        Não se preocupe
+      </p>
+    </section>
+  </main>
+
+  <script>
+document.getElementById("gestationButton").addEventListener("click", () => {
+  localStorage.setItem("ciclyModo", "gestacao");
+  alert("O fluxo de gestação será conectado quando chegarmos nessas telas.");
+});
+
+document.getElementById("menstruationButton").addEventListener("click", () => {
+  localStorage.setItem("ciclyModo", "menstruacao");
+  window.location.href = "tela-05.html";
+});
+
+</script>
+</body>
+</html>

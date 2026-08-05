@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cicly — Benefícios</title>
+  <style>
+*{box-sizing:border-box}
+html,body{width:100%;min-height:100%;margin:0}
+body{background:#ffd7e6;font-family:Arial,Helvetica,sans-serif}
+.benefits-screen{width:min(100vw,430px);min-height:100vh;margin:0 auto;position:relative;overflow:hidden;background:#ffd7e6}
+.without-card{position:absolute;left:1.5%;top:17.7%;width:54.2%;height:73.2%;padding:27px 8px 0 17px;border-radius:22px;background:rgba(255,255,255,.48)}
+.without-card h1,.using-card h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:#ed1662;font-size:clamp(18px,7vw,28px);line-height:1}
+.using-card{position:absolute;right:-.4%;top:8.2%;width:52%;height:71.3%;padding:22px 7px 0 9px;border-radius:22px 0 0 22px;background:#ed1260;color:#fff}
+.using-card h2{color:#fff;white-space:nowrap;font-size:clamp(18px,6.7vw,27px);margin-bottom:26px}
+.negative-item,.positive-item{display:flex;align-items:center;gap:7px}
+.negative-item{margin-top:24px}.positive-item{margin-top:22px}
+.negative-item p,.positive-item p{margin:0;font-size:clamp(8px,3.2vw,12px);line-height:1.22}
+.negative-item p{color:#ed1662}
+.minus,.check{flex:0 0 auto;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700}
+.minus{border:2px solid #ed1662;color:#ed1662;line-height:12px}.check{background:#fff;color:#ed1662;font-size:14px}
+.flowers{position:absolute;right:8px;bottom:8px;width:58px;height:55px}
+.flowers span{position:absolute;color:#ff9ab9;font-size:25px}.flowers span:nth-child(1){left:10px;top:0}.flowers span:nth-child(2){left:0;top:22px}.flowers span:nth-child(3){right:0;bottom:0;font-size:19px}
+.girl{position:absolute;left:-18px;bottom:-38px;width:120px;height:132px}
+.girl .hair{position:absolute;left:24px;top:12px;width:52px;height:48px;background:#ffd85b;border-radius:52% 45% 55% 48%;transform:rotate(-17deg)}
+.girl .face{position:absolute;left:43px;top:31px;width:27px;height:31px;background:#f4baa9;border-radius:48%}
+.girl .body{position:absolute;left:20px;top:56px;width:60px;height:49px;background:#ef477b;border-radius:45% 45% 18% 18%;transform:rotate(-14deg)}
+.girl .leg{position:absolute;width:62px;height:18px;background:#f4baa9;border-radius:999px;bottom:10px;transform-origin:left center}
+.girl .leg.one{left:52px;transform:rotate(33deg)}.girl .leg.two{left:42px;bottom:26px;transform:rotate(12deg)}
+.girl .sleep{position:absolute;left:78px;top:2px;color:#ed1662;font-family:Georgia,serif;font-size:15px}
+.tap-area{position:absolute;inset:0;border:0;background:transparent;cursor:pointer}
+
+</style>
+</head>
+<body>
+  <main class="benefits-screen">
+    <section class="without-card">
+      <h1>Sem o Cicly</h1>
+
+      <div class="negative-item"><span class="minus">−</span><p>Dúvida sobre quando<br>sua menstruação vai<br>chegar</p></div>
+      <div class="negative-item"><span class="minus">−</span><p>Incerteza sobre<br>sintomas comuns do<br>ciclo menstrual</p></div>
+      <div class="negative-item"><span class="minus">−</span><p>Preocupação com<br>atrasos menstruais ou<br>gravidez</p></div>
+      <div class="negative-item"><span class="minus">−</span><p>Incerteza sobre como<br>o ciclo menstrual<br>afeta sua vida</p></div>
+
+      <div class="girl" aria-hidden="true">
+        <span class="hair"></span>
+        <span class="face"></span>
+        <span class="body"></span>
+        <span class="leg one"></span>
+        <span class="leg two"></span>
+        <span class="sleep">Z</span>
+      </div>
+    </section>
+
+    <section class="using-card">
+      <h2>Usando o Cicly</h2>
+
+      <div class="positive-item"><span class="check">✓</span><p>Você está preparada<br>para a menstruação</p></div>
+      <div class="positive-item"><span class="check">✓</span><p>Você sabe o que é<br>normal para o seu<br>corpo</p></div>
+      <div class="positive-item"><span class="check">✓</span><p>Você sabe sua<br>chances de gravidez<br>ao longo do ciclo</p></div>
+      <div class="positive-item"><span class="check">✓</span><p>Você sabe como se<br>cuidar ao longo do<br>ciclo</p></div>
+
+      <div class="flowers" aria-hidden="true">
+        <span>✿</span><span>✿</span><span>✿</span>
+      </div>
+    </section>
+
+    <button id="continueButton" class="tap-area" aria-label="Continuar"></button>
+  </main>
+
+  <script>
+document.getElementById("continueButton").addEventListener("click", () => {
+  window.location.href = "tela-06.html";
+});
+
+</script>
+</body>
+</html>
